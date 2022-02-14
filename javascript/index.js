@@ -102,7 +102,37 @@ obtainInstruction("steak", 0)
   });
 
 // Iteration 3 using async/await
-// ...
+
+const stepsBrusel = async () => {
+  try {
+    const response = await obtainInstruction("brusselsSprouts", 0);
+    const response1 = await obtainInstruction("brusselsSprouts", 1);
+    const response2 = await obtainInstruction("brusselsSprouts", 2);
+    const response3 = await obtainInstruction("brusselsSprouts", 3);
+    const response4 = await obtainInstruction("brusselsSprouts", 4);
+    const response5 = await obtainInstruction("brusselsSprouts", 5);
+    const response6 = await obtainInstruction("brusselsSprouts", 6);
+    const response7 = await obtainInstruction("brusselsSprouts", 7);
+
+    return (document.querySelector("#brusselsSprouts").innerHTML +=
+      `<li>${response}</li>` +
+      `<li>${response1}</li>` +
+      `<li>${response2}</li>` +
+      `<li>${response3}</li>` +
+      `<li>${response4}</li>` +
+      `<li>${response5}</li>` +
+      `<li>${response6}</li>` +
+      `<li>${response7}</li>` +
+      `<li>Brussels Sprouts ready!</li>`);
+  } catch (reject) {
+    return reject;
+  }
+};
+
+stepsBrusel();
+// obtain para pasos
+
+// return una string " brocoli is ready"
 
 // Bonus 2 - Promise all
 // ...
